@@ -4,19 +4,19 @@ A Rapidly-exploring Random Tree (RRT) is a data structure and algorithm that is 
 <img width="702" alt="Map" src="https://user-images.githubusercontent.com/44245211/137796938-85075a3d-15bb-4bc2-9f41-fce2d35f9868.png">
 
 # RRT Holonomic: Outline of the Code
-- Start with the robot’s initial point as the node present in the RRT.
-- Do till all the available free spaces are added in the RRT:
-- - Find a random location in the configuration space. Here the configuration space is the (x, y) point on the image. Let's name this np_q_rand.
-- - Find the nearest node in the RRT based on Euclidean distance. Let's name this np_q_near.
-- - Let’s move along the direction given by (np_q_rand - np_q_near) by 10 steps starting from np_q_near. The
+1. Start with the robot’s initial point as the node present in the RRT.
+2. Do till all the available free spaces are added in the RRT:
+- - 2.1 Find a random location in the configuration space. Here the configuration space is the (x, y) point on the image. Let's name this np_q_rand.
+- - 2.2 Find the nearest node in the RRT based on Euclidean distance. Let's name this np_q_near.
+- - 2.3 Let’s move along the direction given by (np_q_rand - np_q_near) by 10 steps starting from np_q_near. The
 function compute_motion_primitive does this for us. And this function returns the path moved by the
 mid-platform, left wheel and right wheel.
- - - Check the validity of this path i.e. check whether this path has collided or not.
- - - If a collision has occurred, go back to step 2. Else proceed to the next step.  
- - - Add the final location of this path to the RRT.
- - - Show the frame where this path is added to the image.
- - - If this added node is in the locality of the robot’s final point, then break out of this loop.
-- Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
+ - - 2.4 Check the validity of this path i.e. check whether this path has collided or not.
+ - - 2.5 If a collision has occurred, go back to step 2. Else proceed to the next step.  
+ - - 2.6 Add the final location of this path to the RRT.
+ - - 2.7 Show the frame where this path is added to the image.
+ - - 2.8 If this added node is in the locality of the robot’s final point, then break out of this loop.
+3. Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
 
 # RRT Holonomic: Results
 ![h1](https://user-images.githubusercontent.com/44245211/137796960-f14f0819-2ead-46f8-ba0c-b61b415ce0a5.gif)
@@ -25,17 +25,17 @@ mid-platform, left wheel and right wheel.
 
 # RRT Non-Holonomic: Outline of the Code
 
-- Start with the robot’s initial point as the node present in the RRT.
-- Do till all the available free spaces are added in the RRT:
- - - Find a random location in the configuration space. Here the configuration space is the (x, y, theta) point on the image. Let's name this np_q_rand.
- - - Find the nearest node in the RRT based on Euclidean distance and the achievable orientation (maximum steering angle is 30o). Let's name this np_q_near.
- - - Let’s move along the direction given by (np_q_rand - np_q_near) by 10 steps starting from np_q_near. The function compute_motion_primitive does this for us. And this function returns the path moved by the mid-platform, left wheel and right wheel. While doing so, it ensures that the kinematic equations are followed.
- - - Check the validity of this path i.e. check whether this path has collided or not.
- - - If a collision has occurred, go back to step 2. Else proceed to the next step.
- - - Add the final location of this path to the RRT.
- - - Show the frame where this path is added to the image.
- - - If this added node is in the locality of the robot’s final point, then break out of this loop.
-- Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
+1. Start with the robot’s initial point as the node present in the RRT.
+2. Do till all the available free spaces are added in the RRT:
+ - - 2.1 Find a random location in the configuration space. Here the configuration space is the (x, y, theta) point on the image. Let's name this np_q_rand.
+ - - 2.2 Find the nearest node in the RRT based on Euclidean distance and the achievable orientation (maximum steering angle is 30o). Let's name this np_q_near.
+ - - 2.3 Let’s move along the direction given by (np_q_rand - np_q_near) by 10 steps starting from np_q_near. The function compute_motion_primitive does this for us. And this function returns the path moved by the mid-platform, left wheel and right wheel. While doing so, it ensures that the kinematic equations are followed.
+ - - 2.4 Check the validity of this path i.e. check whether this path has collided or not.
+ - - 2.5 If a collision has occurred, go back to step 2. Else proceed to the next step.
+ - - 2.6 Add the final location of this path to the RRT.
+ - - 2.7 Show the frame where this path is added to the image.
+ - - 2.8 If this added node is in the locality of the robot’s final point, then break out of this loop.
+3. Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
 
 # RRT Non-Holonomic: Results
 ![nh1](https://user-images.githubusercontent.com/44245211/137797006-31bd350b-5244-485c-9f73-99fa3125c89c.gif)
@@ -59,3 +59,5 @@ Any changes which need to be made, must be made in the code block under the head
 # To save the output
 - In the cell block under the heading "Main", make changes to the line where ```solver``` function is called. Instructions regarding how the changes required can be understood by reading the function documentation.
 - **Note:** Please make sure that an empty directory exists at the path given to the program to save outputs
+
+##### Big Thanks to Pratikkumar Bulani

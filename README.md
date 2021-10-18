@@ -1,6 +1,7 @@
 # RRT - Rapidly-exploring Random Tree
 
 A Rapidly-exploring Random Tree (RRT) is a data structure and algorithm that is designed for efficiently searching (or navigating) high-dimensional spaces. RRTs are constructed incrementally in a way that quickly reduces the expected distance of a randomly-chosen point to the tree. RRTs are particularly suited for path planning problems that involve obstacles and differential constraints (non-holonomic). The obstacle map is shown below: 
+
 <img width="702" alt="Map" src="https://user-images.githubusercontent.com/44245211/137796938-85075a3d-15bb-4bc2-9f41-fce2d35f9868.png">
 
 # RRT Holonomic: Outline of the Code

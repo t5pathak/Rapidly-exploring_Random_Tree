@@ -1,7 +1,7 @@
 # RRT - Rapidly-exploring Random Tree
 
-A Rapidly-exploring Random Tree (RRT) is a data structure and algorithm that is designed for efficiently searching (or navigating) high-dimensional spaces. RRTs are constructed incrementally in a way that quickly reduces the expected distance of a randomly-chosen point to the tree. RRTs are particularly suited for path planning problems that involve obstacles and differential constraints (non-holonomic). The obstacle map is shown below:
-
+A Rapidly-exploring Random Tree (RRT) is a data structure and algorithm that is designed for efficiently searching (or navigating) high-dimensional spaces. RRTs are constructed incrementally in a way that quickly reduces the expected distance of a randomly-chosen point to the tree. RRTs are particularly suited for path planning problems that involve obstacles and differential constraints (non-holonomic). The obstacle map is shown below: 
+<img width="702" alt="Map" src="https://user-images.githubusercontent.com/44245211/137796938-85075a3d-15bb-4bc2-9f41-fce2d35f9868.png">
 
 # RRT Holonomic: Outline of the Code
 - Start with the robot’s initial point as the node present in the RRT.
@@ -19,7 +19,9 @@ mid-platform, left wheel and right wheel.
 - Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
 
 # RRT Holonomic: Results
-
+![h1](https://user-images.githubusercontent.com/44245211/137796960-f14f0819-2ead-46f8-ba0c-b61b415ce0a5.gif)
+![h2](https://user-images.githubusercontent.com/44245211/137796964-5d089beb-08ba-4e8b-9bb3-7ff039e9d357.gif)
+![h3](https://user-images.githubusercontent.com/44245211/137796966-a7d949ee-15c3-4ea4-b4f2-996c3ca6a469.gif)
 
 # RRT Non-Holonomic: Outline of the Code
 
@@ -36,7 +38,9 @@ mid-platform, left wheel and right wheel.
 - Path Tracing: Path is traced from destination back to source using the parent pointer of the node.
 
 # RRT Non-Holonomic: Results
-
+![nh1](https://user-images.githubusercontent.com/44245211/137797006-31bd350b-5244-485c-9f73-99fa3125c89c.gif)
+![nh2](https://user-images.githubusercontent.com/44245211/137797013-bcab0d48-c2bc-4d09-9f62-0f3ce0655e61.gif)
+![nh3](https://user-images.githubusercontent.com/44245211/137797019-b1c7d713-a0ba-4a62-8998-0fbf0b797ca7.gif)
 
 # Directory Structure
 - ```src``` folder contains the source code. 
